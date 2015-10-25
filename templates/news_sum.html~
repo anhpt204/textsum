@@ -1,0 +1,21 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for sum in news_sums %}
+
+	<div class='one'>
+	<h2>{{ sum.title }}</h2>
+	{% for k,v in sum.summary.items %}
+		<h4>{{ k }}</h4>
+	{% endfor %}
+	</div>
+
+{% empty %}
+
+	No sum
+{% endfor %}
+
+{% endblock %}

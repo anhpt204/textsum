@@ -1,0 +1,45 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+{% load i18n %}
+<!DOCTYPE html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+
+<title>{% trans "Automated Text Summarization" %} | {% block title %}{% endblock %}</title>
+<meta name="description" content="{% block description %}{% endblock %}">
+
+<!-- styles -->
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static "news/style.css" %}" />
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+
+
+<!-- Before the quiz content -->
+<div align="center">
+
+	<h1>Tự động tổng hợp tin tức tiếng Việt</h1>
+	<br />
+</div>
+
+<div class="container">
+
+{% block content %}
+
+{% endblock %}
+
+</div>
+
+<!-- After the quiz content -->
+
+
+</body>
+</html>
