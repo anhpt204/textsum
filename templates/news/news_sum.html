@@ -4,18 +4,21 @@
 
 {% block content %}
 
-{% for sum in news_sums %}
+{% for topic in news_sums %}
 
 	<div class="news-one">
-	<h2>{{ sum.title }}</h2>
-	{% for k,v in sum.summary.items %}
-		<a href={{ k }}>{{ v.0 }}</a>
+	<h2>{{ topic.title }}</h2>
+	{% for k,v in topic.summary.items %}
+		<a href={{ v.0 }}>{{ k }}</a>
 		{% for sen in v %}
 			{% ifnotequal forloop.counter 1 %}
 		
 				<li>{{ sen }}</li>
 			{% endifnotequal %}
 		{% endfor %}
+		
+		{% empty %}
+			no item
 	{% endfor %}
 	</div>
 
@@ -23,5 +26,5 @@
 
 	No sum
 {% endfor %}
-
+<a href="/news/to-pdf/">Export To PDF</a>
 {% endblock %}
